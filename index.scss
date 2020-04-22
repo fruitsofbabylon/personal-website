@@ -1,0 +1,36 @@
+
+    $primary-white : #ffffff;
+    $primary-blue: #152038;
+
+    $secondary-pink: #D2738F;
+    $secondary-blue: #3078B4;
+    
+    $light-pink: #F9DBD8;
+    $light-blue: #BBD0D0;
+
+body {
+    color: $primary-blue;
+    background: $primary-white;
+}
+
+.wrapper {
+    margin-right: auto;
+    margin-left:  auto;
+    max-width: 1140px;
+    padding:  0 10px;
+}
+
+.header-nav { 
+    ul {
+        list-style: none;
+        text-align: center;
+        li {
+            display: inline-block; 
+            padding: 5px 15px;
+            a {
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+        }
+    }
+}

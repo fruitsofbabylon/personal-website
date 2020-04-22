@@ -1,0 +1,19 @@
+body {
+  color: #152038;
+  background: #ffffff; }
+
+.wrapper {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1140px;
+  padding: 0 10px; }
+
+.header-nav ul {
+  list-style: none;
+  text-align: center; }
+  .header-nav ul li {
+    display: inline-block;
+    padding: 5px 15px; }
+    .header-nav ul li a {
+      text-decoration: none;
+      text-transform: uppercase; }
