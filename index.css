@@ -1,6 +1,7 @@
 body {
   color: #152038;
-  background: #ffffff; }
+  background: #ffffff;
+  box-sizing: border-box; }
 
 .wrapper {
   margin-right: auto;
@@ -17,3 +18,17 @@ body {
     .header-nav ul li a {
       text-decoration: none;
       text-transform: uppercase; }
+
+#home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 300px; }
+
+.icons-social i {
+  font-size: 2em;
+  padding: 10px; }
+
+h2 {
+  text-align: center; }
