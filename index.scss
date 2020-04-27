@@ -54,3 +54,30 @@ body {
 h2 {
     text-align: center;
 }
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.left-part {
+  width: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+  
+.right-part {
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  #experience {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
