@@ -37,18 +37,20 @@ h2 {
   display: flex;
   flex-direction: row;
   justify-content: space-around; }
+  .flex-container .left-part {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; }
+  .flex-container .right-part {
+    display: flex;
+    justify-content: center;
+    flex-direction: column; }
 
-.left-part {
-  width: 400px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center; }
+.about-left {
+  width: 400px; }
 
-.right-part {
-  width: 600px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column; }
+.about-right {
+  width: 600px; }
 
 #experience {
   display: flex;
@@ -65,3 +67,6 @@ h2 {
     flex-direction: row-reverse; }
   .project-item {
     width: 400px; }
+
+footer {
+  text-align: center; }

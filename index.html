@@ -37,10 +37,10 @@
             <section id="about">
                 <h2>About Me</h2>
                 <div class="flex-container">
-                    <div class="left-part">
+                    <div class="left-part about-left">
                         <img src="img/myphoto.jpeg" alt="my photo" width="250px id="me">
                     </div>
-                    <div class="right-part">
+                    <div class="right-part about-right">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
                         ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
                         occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -89,31 +89,33 @@
             </section>
             <section id="contact">
                 <h2>Get In Touch</h2>
-                <div class="left-part">
-                    <form>
-                        <div>
-                            <label for="fullname">Name:</label>
-                            <input type="text" name="fullname" id="fullname">
+                <div class="flex-container">
+                    <div class="left-part contact-left">
+                        <form>
+                            <div>
+                                <label for="fullname">Name:</label>
+                                <input type="text" name="fullname" id="fullname">
+                            </div>
+                            <div>
+                                <label for="email">Email:</label>
+                                <input type="text" name="email" id="email">
+                            </div>
+                            <div>
+                                <label for="message">Your Message:</label>
+                                <textarea name="message" id="message"></textarea>
+                            </div>
+                            <input class="btn" type="submit" value="Send">
+                            <a href="#">View CV</a>
+                        </form>
+                    </div>
+                    <div class="right-part contact-right">
+                        <p>Email: orlovanna412@gmail.com</p>
+                        <p>Location: London, UK</p>
+                        <div class="icons-social">
+                                <a target="_blank" href="#"><i class="fab fa-github"></i></a>
+                                <a target="_blank" href="#"><i class="fab fa-linkedin"></i></a>
+                                <a target="_blank" href="#"><i class="fab fa-codepen"></i></a>
                         </div>
-                        <div>
-                            <label for="email">Email:</label>
-                            <input type="text" name="email" id="email">
-                        </div>
-                        <div>
-                            <label for="message">Your Message:</label>
-                            <textarea name="message" id="message"></textarea>
-                        </div>
-                        <input class="btn" type="submit" value="Send">
-                        <a href="#">View CV</a>
-                    </form>
-                </div>
-                <div class="right-part">
-                    <p>Email: orlovanna412@gmail.com</p>
-                    <p>Location: London, UK</p>
-                    <div class="icons-social">
-                            <a target="_blank" href="#"><i class="fab fa-github"></i></a>
-                            <a target="_blank" href="#"><i class="fab fa-linkedin"></i></a>
-                            <a target="_blank" href="#"><i class="fab fa-codepen"></i></a>
                     </div>
                 </div>
             </section>
