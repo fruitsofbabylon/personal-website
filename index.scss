@@ -81,3 +81,16 @@ h2 {
     align-items: center;
     flex-direction: column;
   }
+
+  .project {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-around;
+      &:nth-child(even) {
+        flex-direction: row-reverse; // 3
+      }
+      &-item {
+        width: 400px;
+      }
+  }
