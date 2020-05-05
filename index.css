@@ -68,5 +68,8 @@ h2 {
   .project-item {
     width: 400px; }
 
+#contact p {
+  text-align: center; }
+
 footer {
   text-align: center; }
