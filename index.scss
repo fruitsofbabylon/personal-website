@@ -23,10 +23,10 @@ body {
 }
 
 h1 {
-    font-family: 'Bebas Neue', cursive;
+    font-family: 'Bebas Neue', sans-serif;
     font-weight: 400;
     font-size: 6rem;
-    margin-bottom: 0;
+    margin: 0;
 }
 
 h2 {
@@ -51,6 +51,7 @@ p {
     ul {
         list-style: none;
         text-align: center;
+        padding: 0;
         li {
             display: inline-block; 
             padding: 5px 15px;
@@ -63,12 +64,16 @@ p {
     }
 }
 
+section {
+ margin-top: 30px;
+}
+
 #home {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 500px;
+    min-height: 100vh;
 }
 
 .icons-social {
@@ -79,13 +84,15 @@ p {
 }
 
 .flex-container {
+    padding: 40px 0 20px 0;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     .left-part {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: center;
+        align-items: center;
       }
     .right-part {
         display: flex;
