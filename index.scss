@@ -73,7 +73,7 @@ section {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 92vh;
 }
 
 .icons-social {
@@ -83,8 +83,11 @@ section {
     }
 }
 
-.flex-container {
+.content-box {
     padding: 40px 0 20px 0;
+}
+
+.flex-container {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -121,12 +124,20 @@ section {
       align-items: center;
       flex-direction: row;
       justify-content: space-around;
+      margin-bottom: 35px;
       &:nth-child(even) {
         flex-direction: row-reverse; // 3
       }
       &-item {
         width: 400px;
       }
+  }
+
+  .project-item-img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   #contact {
@@ -137,4 +148,5 @@ section {
 
   footer {
     text-align: center;
+    margin-top: 30px;
   }
