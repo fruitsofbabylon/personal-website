@@ -112,41 +112,41 @@ section {
     width: 600px;
 }
 
-  #experience {
+#experience {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-  }
+}
 
-  .project {
-      display: flex;
-      align-items: center;
-      flex-direction: row;
-      justify-content: space-around;
-      margin-bottom: 35px;
-      &:nth-child(even) {
+.project {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 35px;
+    &:nth-child(even) {
         flex-direction: row-reverse; // 3
-      }
-      &-item {
+    }
+    &-item {
         width: 400px;
-      }
-  }
+    }
+}
 
-  .project-item-img {
+.project-item-img {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
+}
 
-  #contact {
-      p {
-          text-align: center;
-      }
-  }
+#contact {
+    p {
+        text-align: center;
+    }
+}
 
-  footer {
+footer {
     text-align: center;
     margin-top: 30px;
-  }
+}
