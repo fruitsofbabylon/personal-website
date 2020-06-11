@@ -29,15 +29,18 @@ h1 {
     font-weight: 400;
     font-size: 6rem;
     margin: 0;
+    color: $secondary-pink;
 }
 
 h2 {
     font-weight: 700;
     text-align: center;
+    color: $primary-blue;
 }
 
 h3 {
     font-weight: 600;
+    color: $secondary-blue;
 }
 
 p {
@@ -46,6 +49,7 @@ p {
 
 .subheading {
     font-size: 1.5rem;
+    color: $secondary-blue;
 }
 
 .header-nav { 
@@ -60,6 +64,7 @@ p {
                 text-decoration: none;
                 text-transform: uppercase;
                 font-size: 1.17rem;
+                color: $primary-blue;
             }
         }
     }
@@ -82,6 +87,7 @@ section {
     i {
         font-size: 2em;
         padding: 10px;
+        color: $primary-blue;
     }
 }
 
@@ -108,10 +114,20 @@ section {
 
 .about-left {
     width: 400px;
+    img {
+        padding: 10px;
+        border: 7px solid $light-pink;
+    }
 }
 
 .about-right {
     width: 600px;
+    p {
+        span {
+            color: $secondary-blue;
+            font-weight: 600;
+        }
+    }
 }
 
 #experience {
@@ -129,7 +145,7 @@ section {
                 width: 4px;
                 margin: 0 auto;
                 padding: 30px 0;
-                background: $light-blue;
+                background: $light-pink;
                 &:after {
                     content: '';
                     position: absolute;
@@ -139,7 +155,7 @@ section {
                     width: 20px;
                     height: 20px;
                     border-radius: 50%;
-                    background: $secondary-blue;
+                    background: $secondary-pink;
                 }
                 &:nth-child(odd) {
                     div {
@@ -187,6 +203,10 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    img {
+        padding: 7px;
+        border: 5px solid $light-pink;
+    }
 }
 
 #contact {
@@ -224,7 +244,7 @@ section {
             width: 100%;
             height: 2rem;
             border-width: 0 0 2px 0;
-            border-color: $primary-blue;
+            border-color: $secondary-blue;
             font-family: inherit;
             line-height: 1.5rem;
             font-weight: 400;
@@ -256,6 +276,10 @@ section {
         color: $primary-blue;
         border: 2px solid $primary-blue;
     }
+}
+
+.color-text {
+    color: $secondary-blue;
 }
 
 footer {
