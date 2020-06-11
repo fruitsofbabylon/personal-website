@@ -65,13 +65,19 @@ p {
                 text-transform: uppercase;
                 font-size: 1.17rem;
                 color: $primary-blue;
+                &:hover {
+                    color: $secondary-blue;
+                }
+                &:active {
+                    color: $light-blue;
+                }
             }
         }
     }
 }
 
 section {
- margin-top: 30px;
+ padding-top: 20px;
 }
 
 #home {
@@ -88,6 +94,12 @@ section {
         font-size: 2em;
         padding: 10px;
         color: $primary-blue;
+        &:hover {
+            color: $secondary-blue;
+        }
+        &:active {
+            color: $light-blue;
+        }
     }
 }
 
@@ -232,6 +244,21 @@ section {
         justify-content: center;
         align-items: center;
         flex-direction: column;
+
+        .color-text {
+            color: $secondary-blue;
+            font-weight: 600;
+        }
+
+        a {
+            color: $primary-blue;
+            &:hover {
+                color: $secondary-pink;
+            }
+            &:active {
+                color: $light-pink;
+            }
+        }
     }
 }
 
@@ -267,6 +294,14 @@ section {
         cursor: pointer;
         margin: .5rem 2.3rem;
         float: left;
+
+        &:hover {
+            background-color: $secondary-blue;
+        }
+
+        &:active {
+            background-color: $light-blue;
+        }
     }
     .cv-link {
         float: right;
@@ -275,11 +310,15 @@ section {
         text-decoration: none;
         color: $primary-blue;
         border: 2px solid $primary-blue;
-    }
-}
 
-.color-text {
-    color: $secondary-blue;
+        &:hover {
+            border-color: $secondary-blue;
+        }
+
+        &:active {
+            border-color: $light-blue;
+        }
+    }
 }
 
 footer {

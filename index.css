@@ -47,9 +47,13 @@ p {
       text-transform: uppercase;
       font-size: 1.17rem;
       color: #152038; }
+      .header-nav ul li a:hover {
+        color: #3078B4; }
+      .header-nav ul li a:active {
+        color: #BBD0D0; }
 
 section {
-  margin-top: 30px; }
+  padding-top: 20px; }
 
 #home {
   display: flex;
@@ -64,6 +68,10 @@ section {
     font-size: 2em;
     padding: 10px;
     color: #152038; }
+    .icons-social i:hover {
+      color: #3078B4; }
+    .icons-social i:active {
+      color: #BBD0D0; }
 
 .content-box {
   padding: 40px 0 20px 0; }
@@ -174,6 +182,15 @@ section {
     justify-content: center;
     align-items: center;
     flex-direction: column; }
+    .flex-container-contact .right-part-contact .color-text {
+      color: #3078B4;
+      font-weight: 600; }
+    .flex-container-contact .right-part-contact a {
+      color: #152038; }
+      .flex-container-contact .right-part-contact a:hover {
+        color: #D2738F; }
+      .flex-container-contact .right-part-contact a:active {
+        color: #F9DBD8; }
 
 .contact-form .form-group {
   position: relative;
@@ -204,6 +221,10 @@ section {
   cursor: pointer;
   margin: .5rem 2.3rem;
   float: left; }
+  .contact-form .btn:hover {
+    background-color: #3078B4; }
+  .contact-form .btn:active {
+    background-color: #BBD0D0; }
 
 .contact-form .cv-link {
   float: right;
@@ -212,9 +233,10 @@ section {
   text-decoration: none;
   color: #152038;
   border: 2px solid #152038; }
-
-.color-text {
-  color: #3078B4; }
+  .contact-form .cv-link:hover {
+    border-color: #3078B4; }
+  .contact-form .cv-link:active {
+    border-color: #BBD0D0; }
 
 footer {
   text-align: center;
