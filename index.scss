@@ -22,6 +22,7 @@ body {
     margin-left:  auto;
     max-width: 1140px;
     padding:  0 10px;
+    scroll-behavior: smooth;
 }
 
 h1 {
@@ -53,10 +54,12 @@ p {
 }
 
 .header-nav { 
+    padding: 1rem 0;
     ul {
         list-style: none;
         text-align: center;
         padding: 0;
+        margin: 0;
         li {
             display: inline-block; 
             padding: 5px 15px;
@@ -99,6 +102,38 @@ section {
         }
         &:active {
             color: $light-blue;
+        }
+    }
+}
+
+#scroll {
+    position: absolute;
+    bottom: 6em;
+    display: inline-block;
+    span {
+        position: absolute;
+        top: 0;
+        width: 24px;
+        height: 24px;
+        margin-left: -12px;
+        transform: rotate(-45deg);
+        border-left: 2px solid $primary-blue;
+        border-bottom: 2px solid $primary-blue;
+        animation: fly 1.5s infinite;
+        box-sizing: border-box;
+    }
+
+    @keyframes fly {
+        0% {
+            transform: rotate(-45deg) translate(0, 0);
+            opacity: 0;
+          }
+        50% {
+            opacity: 1;
+        }
+        100% {
+            transform: rotate(-45deg) translate(-20px, 20px);
+            opacity: 0;
         }
     }
 }

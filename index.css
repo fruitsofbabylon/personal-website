@@ -10,7 +10,8 @@ body {
   margin-right: auto;
   margin-left: auto;
   max-width: 1140px;
-  padding: 0 10px; }
+  padding: 0 10px;
+  scroll-behavior: smooth; }
 
 h1 {
   font-family: 'Bebas Neue', sans-serif;
@@ -35,22 +36,25 @@ p {
   font-size: 1.5rem;
   color: #3078B4; }
 
-.header-nav ul {
-  list-style: none;
-  text-align: center;
-  padding: 0; }
-  .header-nav ul li {
-    display: inline-block;
-    padding: 5px 15px; }
-    .header-nav ul li a {
-      text-decoration: none;
-      text-transform: uppercase;
-      font-size: 1.17rem;
-      color: #152038; }
-      .header-nav ul li a:hover {
-        color: #3078B4; }
-      .header-nav ul li a:active {
-        color: #BBD0D0; }
+.header-nav {
+  padding: 1rem 0; }
+  .header-nav ul {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 0; }
+    .header-nav ul li {
+      display: inline-block;
+      padding: 5px 15px; }
+      .header-nav ul li a {
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 1.17rem;
+        color: #152038; }
+        .header-nav ul li a:hover {
+          color: #3078B4; }
+        .header-nav ul li a:active {
+          color: #BBD0D0; }
 
 section {
   padding-top: 20px; }
@@ -72,6 +76,32 @@ section {
       color: #3078B4; }
     .icons-social i:active {
       color: #BBD0D0; }
+
+#scroll {
+  position: absolute;
+  bottom: 6em;
+  display: inline-block; }
+  #scroll span {
+    position: absolute;
+    top: 0;
+    width: 24px;
+    height: 24px;
+    margin-left: -12px;
+    transform: rotate(-45deg);
+    border-left: 2px solid #152038;
+    border-bottom: 2px solid #152038;
+    animation: fly 1.5s infinite;
+    box-sizing: border-box; }
+
+@keyframes fly {
+  0% {
+    transform: rotate(-45deg) translate(0, 0);
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  100% {
+    transform: rotate(-45deg) translate(-20px, 20px);
+    opacity: 0; } }
 
 .content-box {
   padding: 40px 0 20px 0; }
