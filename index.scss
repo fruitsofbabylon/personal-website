@@ -243,6 +243,22 @@ section {
     &-item {
         width: 400px;
     }
+    &-item-text {
+        span {
+            color: $secondary-blue;
+            font-weight: 600;
+        }
+        a {
+            color: $secondary-blue;
+            text-decoration: none;
+            &:hover {
+                color: $secondary-pink;
+            }
+            &:active {
+                color: $light-pink;
+            }
+        }
+    }
 }
 
 .project-item-img {
@@ -251,8 +267,11 @@ section {
     justify-content: center;
     align-items: center;
     img {
-        padding: 7px;
-        border: 5px solid $light-pink;
+        padding: 15px;
+        transition: transform .3s ease-in-out;
+        &:hover {
+            transform: scale(1.1);
+        }
     }
 }
 

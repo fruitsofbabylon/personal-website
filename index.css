@@ -183,6 +183,16 @@ section {
     flex-direction: row-reverse; }
   .project-item {
     width: 400px; }
+  .project-item-text span {
+    color: #3078B4;
+    font-weight: 600; }
+  .project-item-text a {
+    color: #3078B4;
+    text-decoration: none; }
+    .project-item-text a:hover {
+      color: #D2738F; }
+    .project-item-text a:active {
+      color: #F9DBD8; }
 
 .project-item-img {
   display: flex;
@@ -190,8 +200,10 @@ section {
   justify-content: center;
   align-items: center; }
   .project-item-img img {
-    padding: 7px;
-    border: 5px solid #F9DBD8; }
+    padding: 15px;
+    transition: transform .3s ease-in-out; }
+    .project-item-img img:hover {
+      transform: scale(1.1); }
 
 #contact p {
   text-align: center; }
