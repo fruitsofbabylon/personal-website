@@ -1,16 +1,66 @@
+$primary-white : #ffffff;
+$primary-blue: #152038;
 
-    $primary-white : #ffffff;
-    $primary-blue: #152038;
-
-    $secondary-pink: #D2738F;
-    $secondary-blue: #3078B4;
+$secondary-pink: #D2738F;
+$secondary-blue: #3078B4;
     
-    $light-pink: #F9DBD8;
-    $light-blue: #BBD0D0;
+$light-pink: #F9DBD8;
+$light-blue: #BBD0D0;
 
-body {
+$themes: (
+    light: (
+        bg: $primary-white,
+        text: $primary-blue,
+        //textSpan: $secondary-blue,
+
+        //mainHeader: $secondary-pink,
+        //subHeader: $secondary-blue,
+        //thirdLevelHeader: $secondary-blue,
+
+        //link: $primary-blue,
+        //linkHover: $secondary-blue,
+        //linkActive: $light-blue,
+        
+        //scroll: $primary-blue,
+        //imgBorder: $light-pink,
+        //timelineMain: $light-pink,
+        //timelineDot: $secondary-pink,
+        //projectImgBorder: $light-pink,
+        //projectImgDots: $secondary-pink,
+    ),
+    dark: (
+        bg: $primary-blue,
+        text: $primary-white,
+        //textSpan: $secondary-pink,
+
+        //mainHeader: $secondary-blue,
+        //subHeader: $secondary-pink,
+        //thirdLevelHeader: $secondary-pink,
+
+        //link: $primary-white,
+        //linkHover: $secondary-pink,
+        //linkActive: $light-pink,
+        
+        //scroll: $primary-white,
+        //imgBorder: $light-blue,
+        //timelineMain: $light-blue,
+        //timelineDot: $secondary-blue,
+        //projectImgBorder: $light-blue,
+        //projectImgDots: $secondary-blue,
+    ),
+);
+
+html {
     color: $primary-blue;
     background: $primary-white;
+    
+    &[data-theme='dark'] {
+        color: $primary-white;
+        background: $primary-blue;
+    }
+}
+
+body {
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
     margin: 0;
@@ -30,34 +80,82 @@ h1 {
     font-weight: 400;
     font-size: 6rem;
     margin: 0;
+
     color: $secondary-pink;
+
+    //@include themed() {
+        //color: t($mainHeader);
+    //}
 }
 
 h2 {
     font-weight: 700;
     text-align: center;
-    color: $primary-blue;
 }
 
 h3 {
     font-weight: 600;
+
     color: $secondary-blue;
+
+    // @include themed() {
+    //     color: t($thirdLevelHeader);
+    // }
 }
 
 p {
     font-weight: 400;
+    span {
+        font-weight: 600;
+
+        color: $secondary-blue;
+
+        //@include themed() {
+        //    color: t($textSpan);
+        //}
+    }
+}
+
+a, i {
+    color: $primary-blue;
+        &:hover {
+            color: $secondary-blue;
+        }
+        &:active {
+            color: $light-blue;
+        }
+        [data-theme='dark'] & {
+            color: $primary-white;
+        }
+
+
+
+        //@include themed() {
+        // color: t($link);
+        //    &:hover {
+        //        color: t($linkHover);
+        //    }
+        //    &:active {
+        //       color: t($linkActive);
+        //   }
+    // }
 }
 
 .subheading {
     font-size: 1.5rem;
+
     color: $secondary-blue;
+
+    //@include themed() {
+    //    color: t($subHeader);
+    //}
 }
 
 .header-nav { 
     padding: 1rem 0;
+    text-align: center;
     ul {
         list-style: none;
-        text-align: center;
         padding: 0;
         margin: 0;
         li {
@@ -67,16 +165,100 @@ p {
                 text-decoration: none;
                 text-transform: uppercase;
                 font-size: 1.17rem;
-                color: $primary-blue;
-                &:hover {
-                    color: $secondary-blue;
-                }
-                &:active {
-                    color: $light-blue;
-                }
             }
         }
     }
+}
+
+#top {
+    position: relative;
+}
+
+.theme {
+    padding-top: 0.3em;
+    position: absolute;
+    top: 1rem;
+    right: 5rem;
+    border: none;
+    white-space: nowrap;
+    
+    label {
+        display: inline-block;
+        position: relative;
+        z-index: 2;
+        line-height: 2;
+        height: 1.5em;
+    }
+
+    input {
+        opacity: 0;
+	    position: absolute;
+    }
+}
+
+.theme label[for="light"] {
+    padding-right: 5em;
+}
+
+.theme label[for="dark"] {
+    margin-left: -4.25em;
+    padding-left: 5em;
+}
+
+.theme:focus-within label[for="light"]:after {
+	box-shadow: 0 0 0 2px $primary-white, 0 0 0 4px $secondary-blue;
+}
+
+.theme.focus-within label[for="light"]:after {
+	box-shadow: 0 0 0 2px $primary-white, 0 0 0 4px $secondary-blue;
+}
+
+.theme label[for="light"]:before,
+.theme label[for="light"]:after {
+	border: 2px solid $primary-blue;
+	content: "";
+	height: 1.5em;
+	overflow: hidden;
+	pointer-events: none;
+	position: absolute;
+    vertical-align: middle;
+}
+
+.theme label[for="light"]:before {
+    background: $primary-blue;
+    border: 1px solid $primary-white;
+	border-radius: 100%;
+    position: absolute;
+    top: 0.15em;
+    right: 2.3em;
+	transform: translateX(0em);
+    transition: all .2s ease-in-out;
+	width: 1.5em;
+    z-index: 2;
+    box-sizing: border-box;
+}
+
+.theme label[for="light"]:after {
+	background: $primary-white;
+	border-radius: 1em;
+	margin: 0 1em;
+	transition: background .2s ease-in-out;
+    width: 3em;
+}
+
+.theme input[id="dark"]:checked ~ label[for="light"]:after {
+    background: $primary-blue;
+    border-color: $primary-white;
+}
+
+.theme input[id="dark"]:checked ~ label[for="light"]:before {
+    transform: translateX(1.4em);
+    background: $primary-white;
+    border-color: $primary-blue;
+}
+
+.theme input[id="dark"]:checked ~ label[for="dark"] {
+	z-index: 1;
 }
 
 section {
@@ -96,13 +278,6 @@ section {
     i {
         font-size: 2em;
         padding: 10px;
-        color: $primary-blue;
-        &:hover {
-            color: $secondary-blue;
-        }
-        &:active {
-            color: $light-blue;
-        }
     }
 }
 
@@ -117,10 +292,15 @@ section {
         height: 24px;
         margin-left: -12px;
         transform: rotate(-45deg);
-        border-left: 2px solid $primary-blue;
-        border-bottom: 2px solid $primary-blue;
         animation: fly 1.5s infinite;
         box-sizing: border-box;
+        border-left: 2px solid $primary-blue;
+        border-bottom: 2px solid $primary-blue;
+
+        //@include themed() {
+        //    border-left: 2px solid t($scroll);
+        //    border-bottom: 2px solid t($scroll);
+        //}
     }
 
     @keyframes fly {
@@ -164,17 +344,15 @@ section {
     img {
         padding: 10px;
         border: 7px solid $light-pink;
+
+        //@include themed() {
+        //    border: 7px solid t($imgBorder);
+        //}
     }
 }
 
 .about-right {
     width: 600px;
-    p {
-        span {
-            color: $secondary-blue;
-            font-weight: 600;
-        }
-    }
 }
 
 #experience {
@@ -193,6 +371,11 @@ section {
                 margin: 0 auto;
                 padding: 30px 0;
                 background: $light-pink;
+
+                //@include themed() {
+                //    background: t($timelineMain);
+                //}
+
                 &:after {
                     content: '';
                     position: absolute;
@@ -203,6 +386,10 @@ section {
                     height: 20px;
                     border-radius: 50%;
                     background: $secondary-pink;
+
+                    //@include themed() {
+                    //    background: t($timelineDot);
+                    //}
                 }
                 &:nth-child(odd) {
                     div {
@@ -242,23 +429,7 @@ section {
     }
     &-item {
         width: 400px;
-    }
-    &-item-text {
-        span {
-            color: $secondary-blue;
-            font-weight: 600;
-        }
-        a {
-            color: $secondary-blue;
-            text-decoration: none;
-            &:hover {
-                color: $secondary-pink;
-            }
-            &:active {
-                color: $light-pink;
-            }
-        }
-    }
+    } 
 }
 
 .project-item-img {
@@ -327,18 +498,8 @@ section {
         flex-direction: column;
 
         .color-text {
-            color: $secondary-blue;
+            color: $secondary-pink;
             font-weight: 600;
-        }
-
-        a {
-            color: $primary-blue;
-            &:hover {
-                color: $secondary-pink;
-            }
-            &:active {
-                color: $light-pink;
-            }
         }
     }
 }

@@ -26,6 +26,13 @@
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </nav>
+                <fieldset aria-label="theme switcher" role="radiogroup" class="theme">
+                    <input type="radio" id="light" name="mode">
+                    <input type="radio" id="dark" name="mode">
+                    
+                    <label for="light"></label>
+                    <label for="dark"></label>
+                </fieldset>
             </header>
             <section id="home">    
                 <h1>Hey there, I’m Anna!</h1>
@@ -99,7 +106,7 @@
                 <div class="content-box">
                     <div class="project">
                         <div class="project-item project-item-text">
-                            <h3><a target="_blank" href="https://fruitsofbabylon.github.io/kvast-landing-page/">Kvast Landing Page</a></h3>
+                            <h3>Kvast Landing Page</h3>
                             <p>The landing page for a fictional Russian beverage-producing company made with <span>HTML</span> and <span>CSS</span> as a learning project for <a target="_blank" href="https://htmlacademy.ru/">HTML Academy</a>. </p>
                         </div>
                         <div class="project-item project-item-img">
@@ -150,31 +157,8 @@
         </div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script>
-            $(document).ready(function(){
-            // Add smooth scrolling to all links
-            $("a").on('click', function(event) {
-
-                // Make sure this.hash has a value before overriding default behavior
-                if (this.hash !== "") {
-                // Prevent default anchor click behavior
-                event.preventDefault();
-
-                // Store hash
-                var hash = this.hash;
-
-                // Using jQuery's animate() method to add smooth page scroll
-                // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-                $('html, body').animate({
-                    scrollTop: $(hash).offset().top
-                }, 800, function(){
-
-                    // Add hash (#) to URL when done scrolling (default click behavior)
-                    window.location.hash = hash;
-                });
-                } // End if
-            });
-            });
-        </script>
+        <script src="scroll.js"></script>
+        <script src="theme.js"></script>
+        
     </body>
 </html>
