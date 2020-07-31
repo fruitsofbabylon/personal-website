@@ -32,12 +32,16 @@ h2 {
 h3 {
   font-weight: 600;
   color: #3078B4; }
+  html[data-theme='dark'] h3 {
+    color: #D2738F; }
 
 p {
   font-weight: 400; }
   p span {
     font-weight: 600;
     color: #3078B4; }
+    html[data-theme='dark'] p span {
+      color: #D2738F; }
 
 a, i {
   color: #152038; }
@@ -45,12 +49,18 @@ a, i {
     color: #3078B4; }
   a:active, i:active {
     color: #BBD0D0; }
-  [data-theme='dark'] a, [data-theme='dark'] i {
+  html[data-theme='dark'] a, html[data-theme='dark'] i {
     color: #ffffff; }
+    html[data-theme='dark'] a:hover, html[data-theme='dark'] i:hover {
+      color: #BBD0D0; }
+    html[data-theme='dark'] a:active, html[data-theme='dark'] i:active {
+      color: #3078B4; }
 
 .subheading {
   font-size: 1.5rem;
   color: #3078B4; }
+  html[data-theme='dark'] .subheading {
+    color: #BBD0D0; }
 
 .header-nav {
   padding: 1rem 0;
@@ -173,6 +183,8 @@ section {
     box-sizing: border-box;
     border-left: 2px solid #152038;
     border-bottom: 2px solid #152038; }
+    html[data-theme='dark'] #scroll span {
+      border-color: #ffffff; }
 
 @keyframes fly {
   0% {
@@ -206,6 +218,8 @@ section {
   .about-left img {
     padding: 10px;
     border: 7px solid #F9DBD8; }
+    html[data-theme='dark'] .about-left img {
+      border-color: #BBD0D0; }
 
 .about-right {
   width: 600px; }
@@ -226,6 +240,8 @@ section {
       margin: 0 auto;
       padding: 30px 0;
       background: #F9DBD8; }
+      html[data-theme='dark'] #experience ul li {
+        background: #BBD0D0; }
       #experience ul li:after {
         content: '';
         position: absolute;
@@ -236,6 +252,8 @@ section {
         height: 20px;
         border-radius: 50%;
         background: #D2738F; }
+        html[data-theme='dark'] #experience ul li:after {
+          background: #3078B4; }
       #experience ul li:nth-child(odd) div {
         left: 45px;
         text-align: left; }
@@ -275,6 +293,9 @@ section {
   position: relative;
   width: 35%;
   transition: transform .3s ease-in-out; }
+  html[data-theme='dark'] .project-item-img {
+    background: #BBD0D0;
+    border-color: #BBD0D0; }
   .project-item-img:after {
     content: "";
     position: absolute;
@@ -285,6 +306,9 @@ section {
     border-radius: 50%;
     background: #D2738F;
     box-shadow: 0 0 0 0.2rem #D2738F, 1.3rem 0 0 0 #D2738F, 1.3rem 0 0 0.2rem #D2738F, 2.6rem 0 0 0 #D2738F, 2.6rem 0 0 0.2rem #D2738F; }
+    html[data-theme='dark'] .project-item-img:after {
+      background: #3078B4;
+      box-shadow: 0 0 0 0.2rem #3078B4, 1.3rem 0 0 0 #3078B4, 1.3rem 0 0 0.2rem #3078B4, 2.6rem 0 0 0 #3078B4, 2.6rem 0 0 0.2rem #3078B4; }
   .project-item-img:hover {
     transform: scale(1.1); }
   .project-item-img img {
@@ -327,6 +351,8 @@ section {
     line-height: 1.5rem;
     font-weight: 400;
     margin-top: 0.5rem; }
+    html[data-theme='dark'] .contact-form .form-group .form-control {
+      background: #152038; }
   .contact-form .form-group textarea.form-control {
     height: auto; }
 
@@ -339,14 +365,27 @@ section {
   letter-spacing: 2px;
   line-height: 1.5rem;
   padding: 8px 16px 8px 18px;
-  border: none;
+  border: 1px solid #152038;
+  border-radius: 0.3em;
   cursor: pointer;
   margin: .5rem 2.3rem;
   float: left; }
+  html[data-theme='dark'] .contact-form .btn {
+    background-color: #ffffff;
+    color: #152038;
+    border-color: #ffffff; }
+    html[data-theme='dark'] .contact-form .btn:hover {
+      background-color: #BBD0D0;
+      border-color: #BBD0D0; }
+    html[data-theme='dark'] .contact-form .btn:active {
+      background-color: #3078B4;
+      border-color: #3078B4; }
   .contact-form .btn:hover {
-    background-color: #3078B4; }
+    background-color: #3078B4;
+    border-color: #3078B4; }
   .contact-form .btn:active {
-    background-color: #BBD0D0; }
+    background-color: #BBD0D0;
+    border-color: #BBD0D0; }
 
 .contact-form .cv-link {
   float: right;
@@ -354,7 +393,15 @@ section {
   padding: 8px 16px;
   text-decoration: none;
   color: #152038;
-  border: 2px solid #152038; }
+  border: 2px solid #152038;
+  border-radius: 0.3em; }
+  html[data-theme='dark'] .contact-form .cv-link {
+    color: #ffffff;
+    border-color: #ffffff; }
+    html[data-theme='dark'] .contact-form .cv-link:hover {
+      border-color: #BBD0D0; }
+    html[data-theme='dark'] .contact-form .cv-link:active {
+      border-color: #3078B4; }
   .contact-form .cv-link:hover {
     border-color: #3078B4; }
   .contact-form .cv-link:active {

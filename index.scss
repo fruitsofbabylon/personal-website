@@ -7,49 +7,6 @@ $secondary-blue: #3078B4;
 $light-pink: #F9DBD8;
 $light-blue: #BBD0D0;
 
-$themes: (
-    light: (
-        bg: $primary-white,
-        text: $primary-blue,
-        //textSpan: $secondary-blue,
-
-        //mainHeader: $secondary-pink,
-        //subHeader: $secondary-blue,
-        //thirdLevelHeader: $secondary-blue,
-
-        //link: $primary-blue,
-        //linkHover: $secondary-blue,
-        //linkActive: $light-blue,
-        
-        //scroll: $primary-blue,
-        //imgBorder: $light-pink,
-        //timelineMain: $light-pink,
-        //timelineDot: $secondary-pink,
-        //projectImgBorder: $light-pink,
-        //projectImgDots: $secondary-pink,
-    ),
-    dark: (
-        bg: $primary-blue,
-        text: $primary-white,
-        //textSpan: $secondary-pink,
-
-        //mainHeader: $secondary-blue,
-        //subHeader: $secondary-pink,
-        //thirdLevelHeader: $secondary-pink,
-
-        //link: $primary-white,
-        //linkHover: $secondary-pink,
-        //linkActive: $light-pink,
-        
-        //scroll: $primary-white,
-        //imgBorder: $light-blue,
-        //timelineMain: $light-blue,
-        //timelineDot: $secondary-blue,
-        //projectImgBorder: $light-blue,
-        //projectImgDots: $secondary-blue,
-    ),
-);
-
 html {
     color: $primary-blue;
     background: $primary-white;
@@ -80,12 +37,7 @@ h1 {
     font-weight: 400;
     font-size: 6rem;
     margin: 0;
-
     color: $secondary-pink;
-
-    //@include themed() {
-        //color: t($mainHeader);
-    //}
 }
 
 h2 {
@@ -95,24 +47,22 @@ h2 {
 
 h3 {
     font-weight: 600;
-
     color: $secondary-blue;
 
-    // @include themed() {
-    //     color: t($thirdLevelHeader);
-    // }
+    html[data-theme='dark'] & {
+        color: $secondary-pink;
+    }
 }
 
 p {
     font-weight: 400;
     span {
         font-weight: 600;
-
         color: $secondary-blue;
 
-        //@include themed() {
-        //    color: t($textSpan);
-        //}
+        html[data-theme='dark'] & {
+            color: $secondary-pink;
+        }
     }
 }
 
@@ -121,34 +71,31 @@ a, i {
         &:hover {
             color: $secondary-blue;
         }
+
         &:active {
             color: $light-blue;
         }
-        [data-theme='dark'] & {
+
+        html[data-theme='dark'] & {
             color: $primary-white;
+
+            &:hover {
+                color: $light-blue;
+            }
+
+            &:active {
+                color: $secondary-blue;
+            }
         }
-
-
-
-        //@include themed() {
-        // color: t($link);
-        //    &:hover {
-        //        color: t($linkHover);
-        //    }
-        //    &:active {
-        //       color: t($linkActive);
-        //   }
-    // }
 }
 
 .subheading {
     font-size: 1.5rem;
-
     color: $secondary-blue;
 
-    //@include themed() {
-    //    color: t($subHeader);
-    //}
+    html[data-theme='dark'] & {
+        color: $light-blue;
+    }
 }
 
 .header-nav { 
@@ -297,10 +244,9 @@ section {
         border-left: 2px solid $primary-blue;
         border-bottom: 2px solid $primary-blue;
 
-        //@include themed() {
-        //    border-left: 2px solid t($scroll);
-        //    border-bottom: 2px solid t($scroll);
-        //}
+        html[data-theme='dark'] & {
+            border-color: $primary-white;
+        }
     }
 
     @keyframes fly {
@@ -345,9 +291,9 @@ section {
         padding: 10px;
         border: 7px solid $light-pink;
 
-        //@include themed() {
-        //    border: 7px solid t($imgBorder);
-        //}
+        html[data-theme='dark'] & {
+            border-color: $light-blue;
+        }
     }
 }
 
@@ -372,9 +318,9 @@ section {
                 padding: 30px 0;
                 background: $light-pink;
 
-                //@include themed() {
-                //    background: t($timelineMain);
-                //}
+                html[data-theme='dark'] & {
+                    background: $light-blue;
+                }
 
                 &:after {
                     content: '';
@@ -387,10 +333,11 @@ section {
                     border-radius: 50%;
                     background: $secondary-pink;
 
-                    //@include themed() {
-                    //    background: t($timelineDot);
-                    //}
+                    html[data-theme='dark'] & {
+                        background: $secondary-blue;
+                    }
                 }
+
                 &:nth-child(odd) {
                     div {
                         left: 45px;
@@ -425,7 +372,7 @@ section {
     justify-content: space-around;
     margin-bottom: 35px;
     &:nth-child(even) {
-        flex-direction: row-reverse; // 3
+        flex-direction: row-reverse; 
     }
     &-item {
         width: 400px;
@@ -437,14 +384,19 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #F9DBD8;
-	border: solid #F9DBD8;
+    background: $light-pink;
+	border: solid $light-pink;
 	border-width: 2rem 0.5rem 0.3rem 0.5rem;
     border-radius: 0.5rem;
     margin-top: 30px;
     position: relative;
     width: 35%;
     transition: transform .3s ease-in-out;
+
+    html[data-theme='dark'] & {
+        background: $light-blue;
+        border-color: $light-blue;
+    }
 
     &:after {
         content: "";
@@ -454,13 +406,23 @@ section {
         top: -1.1rem;
         left: 1rem;
         border-radius: 50%;
-        background: #D2738F;            // First Button fill
+        background: $secondary-pink;            // First Button fill
         box-shadow:  
-        0 0 0 0.2rem #D2738F,      // First button stroke  
-        1.3rem 0 0 0 #D2738F,           // Second button fill
-        1.3rem 0 0 0.2rem #D2738F, // Second button stroke
-        2.6rem 0 0 0 #D2738F,             // Third button fill
-        2.6rem 0 0 0.2rem #D2738F;   // Third Button stroke     
+            0 0 0 0.2rem $secondary-pink,      // First button stroke  
+            1.3rem 0 0 0 $secondary-pink,           // Second button fill
+            1.3rem 0 0 0.2rem $secondary-pink, // Second button stroke
+            2.6rem 0 0 0 $secondary-pink,             // Third button fill
+            2.6rem 0 0 0.2rem $secondary-pink;   // Third Button stroke
+        
+        html[data-theme='dark'] & {
+            background: $secondary-blue;
+            box-shadow:  
+                0 0 0 0.2rem $secondary-blue, 
+                1.3rem 0 0 0 $secondary-blue,          
+                1.3rem 0 0 0.2rem $secondary-blue, 
+                2.6rem 0 0 0 $secondary-blue,             
+                2.6rem 0 0 0.2rem $secondary-blue; 
+        }
     }
 
     &:hover {
@@ -518,6 +480,10 @@ section {
             line-height: 1.5rem;
             font-weight: 400;
             margin-top: 0.5rem;
+
+            html[data-theme='dark'] & {
+                background: $primary-blue;
+            }
         }
         textarea.form-control {
             height: auto;
@@ -532,17 +498,36 @@ section {
         letter-spacing: 2px;
         line-height: 1.5rem;
         padding: 8px 16px 8px 18px;
-        border: none;
+        border: 1px solid $primary-blue;
+        border-radius: 0.3em;
         cursor: pointer;
         margin: .5rem 2.3rem;
         float: left;
 
+        html[data-theme='dark'] & {
+            background-color: $primary-white;
+            color: $primary-blue;
+            border-color: $primary-white;
+
+            &:hover {
+                background-color: $light-blue;
+                border-color: $light-blue;
+            }
+
+            &:active {
+                background-color: $secondary-blue;
+                border-color: $secondary-blue;
+            }
+        }
+
         &:hover {
             background-color: $secondary-blue;
+            border-color: $secondary-blue;
         }
 
         &:active {
             background-color: $light-blue;
+            border-color: $light-blue;
         }
     }
     .cv-link {
@@ -552,6 +537,20 @@ section {
         text-decoration: none;
         color: $primary-blue;
         border: 2px solid $primary-blue;
+        border-radius: 0.3em;
+
+        html[data-theme='dark'] & {
+            color: $primary-white;
+            border-color: $primary-white;
+
+            &:hover {
+                border-color: $light-blue;
+            }
+
+            &:active {
+                border-color: $secondary-blue;
+            }
+        }
 
         &:hover {
             border-color: $secondary-blue;
