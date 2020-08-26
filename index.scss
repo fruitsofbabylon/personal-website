@@ -101,6 +101,11 @@ a, i {
 .header-nav { 
     padding: 1rem 0;
     text-align: center;
+
+    .mobile-toggle {
+        display: none;
+    }
+
     ul {
         list-style: none;
         padding: 0;
@@ -164,7 +169,7 @@ a, i {
 .theme label[for="light"]:after {
 	border: 2px solid $primary-blue;
 	content: "";
-	height: 1.5em;
+	height: 1.2em;
 	overflow: hidden;
 	pointer-events: none;
 	position: absolute;
@@ -177,10 +182,10 @@ a, i {
 	border-radius: 100%;
     position: absolute;
     top: 0.15em;
-    right: 2.3em;
+    right: 2.6em;
 	transform: translateX(0em);
     transition: all .2s ease-in-out;
-	width: 1.5em;
+	width: 1.2em;
     z-index: 2;
     box-sizing: border-box;
 }
@@ -190,7 +195,7 @@ a, i {
 	border-radius: 1em;
 	margin: 0 1em;
 	transition: background .2s ease-in-out;
-    width: 3em;
+    width: 2.3em;
 }
 
 .theme input[id="dark"]:checked ~ label[for="light"]:after {
@@ -199,7 +204,7 @@ a, i {
 }
 
 .theme input[id="dark"]:checked ~ label[for="light"]:before {
-    transform: translateX(1.4em);
+    transform: translateX(1em);
     background: $primary-white;
     border-color: $primary-blue;
 }
@@ -218,6 +223,7 @@ section {
     align-items: center;
     flex-direction: column;
     min-height: 92vh;
+    text-align: center;
 }
 
 .icons-social {
@@ -288,6 +294,9 @@ section {
 .about-left {
     width: 400px;
     img {
+        max-width: 100%;
+        height: auto;
+        display: block;
         padding: 10px;
         border: 7px solid $light-pink;
 
@@ -430,8 +439,10 @@ section {
     }
 
     img {
-        width: 100%;
+        max-width: 100%;
+        display: block;
         border-radius: 0.5rem;
+        height: auto;
     }
 }
 
@@ -565,4 +576,37 @@ section {
 footer {
     text-align: center;
     margin-top: 30px;
+}
+
+@media screen and (max-width: 600px) {
+    .header-nav {
+        ul {
+            display: none;
+        }
+        a.mobile-toggle {
+            float: right;
+            display: block;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .header-nav.responsive {position: relative;}
+    .header-nav.responsive a.mobile-toggle {
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 1rem 0;
+    }
+    .header-nav.responsive ul {
+        float: none;
+        display: block;
+        text-align: right;
+        margin-top: 2.5rem;
+
+        li {
+            display: block;
+            padding: .5rem 0;
+        }
+    }
 }
