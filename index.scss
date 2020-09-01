@@ -98,9 +98,18 @@ a, i {
     }
 }
 
+#top {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+
 .header-nav { 
     padding: 1rem 0;
     text-align: center;
+    flex-grow: 4;
+    position: relative;
 
     .mobile-toggle {
         display: none;
@@ -110,9 +119,14 @@ a, i {
         list-style: none;
         padding: 0;
         margin: 0;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+        align-items: center;
+        margin: 0 4rem;
+
         li {
-            display: inline-block; 
-            padding: 5px 15px;
+            display: inline-block;
             a {
                 text-decoration: none;
                 text-transform: uppercase;
@@ -122,23 +136,18 @@ a, i {
     }
 }
 
-#top {
-    position: relative;
-}
-
 .theme {
+    padding: 0;
     padding-top: 0.3em;
-    position: absolute;
-    top: 1rem;
-    right: 5rem;
     border: none;
     white-space: nowrap;
+    flex-grow: 1;
+    margin: 0;
     
     label {
         display: inline-block;
         position: relative;
         z-index: 2;
-        line-height: 2;
         height: 1.5em;
     }
 
@@ -154,7 +163,7 @@ a, i {
 
 .theme label[for="dark"] {
     margin-left: -4.25em;
-    padding-left: 5em;
+    padding-left: 3em;
 }
 
 .theme:focus-within label[for="light"]:after {
@@ -169,7 +178,7 @@ a, i {
 .theme label[for="light"]:after {
 	border: 2px solid $primary-blue;
 	content: "";
-	height: 1.2em;
+	height: 1.18em;
 	overflow: hidden;
 	pointer-events: none;
 	position: absolute;
@@ -181,11 +190,12 @@ a, i {
     border: 1px solid $primary-white;
 	border-radius: 100%;
     position: absolute;
-    top: 0.15em;
-    right: 2.6em;
+    top: 0.13em;
+    right: 2.7em;
 	transform: translateX(0em);
     transition: all .2s ease-in-out;
-	width: 1.2em;
+    width: 1.17em;
+    height: 1.17em;
     z-index: 2;
     box-sizing: border-box;
 }
@@ -204,7 +214,7 @@ a, i {
 }
 
 .theme input[id="dark"]:checked ~ label[for="light"]:before {
-    transform: translateX(1em);
+    transform: translateX(1.1em);
     background: $primary-white;
     border-color: $primary-blue;
 }
@@ -588,21 +598,23 @@ footer {
             display: block;
         }
     }
+
+    #top {
+        flex-direction: row-reverse;
+    }
 }
 
 @media screen and (max-width: 600px) {
-    .header-nav.responsive {position: relative;}
     .header-nav.responsive a.mobile-toggle {
-        position: absolute;
-        right: 0;
-        top: 0;
-        padding: 1rem 0;
+        z-index: 100;
     }
     .header-nav.responsive ul {
         float: none;
         display: block;
         text-align: right;
-        margin-top: 2.5rem;
+        margin: 2.5rem 0 0 0;
+        position: absolute;
+        right: 0;
 
         li {
             display: block;
