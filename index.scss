@@ -28,7 +28,7 @@ body {
     margin-right: auto;
     margin-left:  auto;
     max-width: 1140px;
-    padding:  0 10px;
+    padding:  0 1rem;
     scroll-behavior: smooth;
 }
 
@@ -38,6 +38,7 @@ h1 {
     font-size: 6rem;
     margin: 0;
     color: $secondary-pink;
+    padding: 0 1rem;
 }
 
 h2 {
@@ -108,7 +109,7 @@ a, i {
 .header-nav { 
     padding: 1rem 0;
     text-align: center;
-    flex-grow: 4;
+    flex-grow: 5;
     position: relative;
 
     .mobile-toggle {
@@ -459,6 +460,7 @@ section {
 #contact {
     p {
         text-align: center;
+        padding: 0 2rem;
     }
 }
 
@@ -588,7 +590,16 @@ footer {
     margin-top: 30px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
+    .header-nav ul {
+        justify-content: space-between;
+        margin: 0 1.5rem;
+    }
+
+    
+}
+
+@media screen and (max-width: 670px) {
     .header-nav {
         ul {
             display: none;
@@ -602,9 +613,17 @@ footer {
     #top {
         flex-direction: row-reverse;
     }
+
+    h1 {
+        font-size: 5rem;
+    }
+
+    .subheading {
+        font-size: 1.3rem;
+    }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 670px) {
     .header-nav.responsive a.mobile-toggle {
         z-index: 100;
     }
