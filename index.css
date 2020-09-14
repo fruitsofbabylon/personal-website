@@ -271,11 +271,12 @@ section {
         left: 45px;
         text-align: left; }
       #experience ul li:nth-child(even) div {
-        right: 495px;
+        right: 425px;
         text-align: right; }
       #experience ul li div {
+        box-sizing: border-box;
         position: relative;
-        width: 420px;
+        width: 380px;
         padding: 15px; }
         #experience ul li div P {
           margin: 0; }
@@ -427,6 +428,13 @@ footer {
   text-align: center;
   margin-top: 30px; }
 
+@media screen and (max-width: 900px) {
+  #experience ul li div {
+    width: 275px; }
+  #experience ul li:nth-child(even) div {
+    left: -314px;
+    /*250+45-6*/ } }
+
 @media screen and (max-width: 800px) {
   .wrapper {
     padding: 0 2rem; }
@@ -450,7 +458,16 @@ footer {
   h1 {
     font-size: 5rem; }
   .subheading {
-    font-size: 1.3rem; } }
+    font-size: 1.3rem; }
+  #experience {
+    align-items: stretch; }
+  #experience ul li {
+    margin-left: 2rem; }
+    #experience ul li div {
+      width: calc(100vw - 91px); }
+  #experience ul li:nth-child(even) div {
+    left: 45px;
+    text-align: left; } }
 
 @media screen and (max-width: 670px) {
   .header-nav.responsive a.mobile-toggle {
