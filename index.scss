@@ -389,71 +389,76 @@ section {
     align-items: center;
     flex-direction: row;
     justify-content: space-around;
-    margin-bottom: 35px;
     &:nth-child(even) {
         flex-direction: row-reverse; 
     }
-    &-item {
-        width: 400px;
-    } 
-}
 
-.project-item-img {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: $light-pink;
-	border: solid $light-pink;
-	border-width: 2rem 0.5rem 0.3rem 0.5rem;
-    border-radius: 0.5rem;
-    margin-top: 30px;
-    position: relative;
-    width: 35%;
-    transition: transform .3s ease-in-out;
-
-    html[data-theme='dark'] & {
-        background: $light-blue;
-        border-color: $light-blue;
-    }
-
-    &:after {
-        content: "";
-        position: absolute;
-        width: 6px; // Set to px as rem's skew under sub-pixel rendering
-        height: 6px;
-        top: -1.1rem;
-        left: 1rem;
-        border-radius: 50%;
-        background: $secondary-pink;            // First Button fill
-        box-shadow:  
-            0 0 0 0.2rem $secondary-pink,      // First button stroke  
-            1.3rem 0 0 0 $secondary-pink,           // Second button fill
-            1.3rem 0 0 0.2rem $secondary-pink, // Second button stroke
-            2.6rem 0 0 0 $secondary-pink,             // Third button fill
-            2.6rem 0 0 0.2rem $secondary-pink;   // Third Button stroke
-        
+    .project-item-img {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: $light-pink;
+        border: solid $light-pink;
+        border-width: 2rem 0.5rem 0.3rem 0.5rem;
+        border-radius: 0.5rem;
+        position: relative;
+        margin: 0 1rem;
+        transition: transform .3s ease-in-out;
+    
         html[data-theme='dark'] & {
-            background: $secondary-blue;
+            background: $light-blue;
+            border-color: $light-blue;
+        }
+    
+        &:after {
+            content: "";
+            position: absolute;
+            width: 6px; // Set to px as rem's skew under sub-pixel rendering
+            height: 6px;
+            top: -1.1rem;
+            left: 1rem;
+            border-radius: 50%;
+            background: $secondary-pink;            // First Button fill
             box-shadow:  
-                0 0 0 0.2rem $secondary-blue, 
-                1.3rem 0 0 0 $secondary-blue,          
-                1.3rem 0 0 0.2rem $secondary-blue, 
-                2.6rem 0 0 0 $secondary-blue,             
-                2.6rem 0 0 0.2rem $secondary-blue; 
+                0 0 0 0.2rem $secondary-pink,      // First button stroke  
+                1.3rem 0 0 0 $secondary-pink,           // Second button fill
+                1.3rem 0 0 0.2rem $secondary-pink, // Second button stroke
+                2.6rem 0 0 0 $secondary-pink,             // Third button fill
+                2.6rem 0 0 0.2rem $secondary-pink;   // Third Button stroke
+            
+            html[data-theme='dark'] & {
+                background: $secondary-blue;
+                box-shadow:  
+                    0 0 0 0.2rem $secondary-blue, 
+                    1.3rem 0 0 0 $secondary-blue,          
+                    1.3rem 0 0 0.2rem $secondary-blue, 
+                    2.6rem 0 0 0 $secondary-blue,             
+                    2.6rem 0 0 0.2rem $secondary-blue; 
+            }
+        }
+    
+        &:hover {
+            transform: scale(1.1);
+        }
+    
+        img {
+            max-width: 100%;
+            display: block;
+            border-radius: 0.5rem;
+            height: auto;
         }
     }
 
-    &:hover {
-        transform: scale(1.1);
+    .project-item-text {
+        width: 45%;
+        margin: 0 1rem;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
     }
 
-    img {
-        max-width: 100%;
-        display: block;
-        border-radius: 0.5rem;
-        height: auto;
-    }
 }
 
 #contact {
@@ -617,6 +622,23 @@ footer {
             margin: 2rem 0 0 0;
             width: 100%;
         }
+    }
+
+    .project {
+        flex-direction: column-reverse;
+
+        .project-item-img {
+            margin-bottom: 2rem;
+        }
+
+        .project-item-text {
+            width: 100%;
+            
+            h3 {
+                text-align: center;
+            }
+        }
+
     }
 }
 
