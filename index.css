@@ -455,7 +455,14 @@ footer {
     .project .project-item-text {
       width: 100%; }
       .project .project-item-text h3 {
-        text-align: center; } }
+        text-align: center; }
+  .flex-container-contact {
+    flex-direction: column; }
+    .flex-container-contact .left-part-contact {
+      align-items: center;
+      margin-bottom: 2rem; }
+      .flex-container-contact .left-part-contact .contact-form {
+        width: 75%; } }
 
 @media screen and (max-width: 670px) {
   .header-nav ul {

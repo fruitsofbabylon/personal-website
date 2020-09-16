@@ -640,6 +640,20 @@ footer {
         }
 
     }
+
+    .flex-container-contact {
+        flex-direction: column;
+
+
+        .left-part-contact {
+            align-items: center;
+            margin-bottom: 2rem;
+
+            .contact-form {
+                width: 75%;
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 670px) {
