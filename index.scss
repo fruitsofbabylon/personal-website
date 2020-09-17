@@ -516,76 +516,87 @@ section {
             height: auto;
         }
     }
-    .btn {
-        display: inline-block;
-        background-color: $primary-blue;
-        color: $primary-white;
-        font-family: inherit;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        line-height: 1.5rem;
-        padding: 8px 16px 8px 18px;
-        border: 1px solid $primary-blue;
-        border-radius: 0.3em;
-        cursor: pointer;
-        margin: .5rem 2.3rem;
 
-        html[data-theme='dark'] & {
-            background-color: $primary-white;
-            color: $primary-blue;
-            border-color: $primary-white;
+    .flex-container-btn {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
 
-            &:hover {
-                background-color: $light-blue;
-                border-color: $light-blue;
+        .btn {
+            display: inline-block;
+            background-color: $primary-blue;
+            color: $primary-white;
+            font-family: inherit;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            line-height: 1.5rem;
+            padding: 8px 16px 8px 18px;
+            border: 1px solid $primary-blue;
+            border-radius: 0.3em;
+            box-sizing: border-box;
+            cursor: pointer;
+    
+            html[data-theme='dark'] & {
+                background-color: $primary-white;
+                color: $primary-blue;
+                border-color: $primary-white;
+    
+                &:hover {
+                    background-color: $light-blue;
+                    border-color: $light-blue;
+                }
+    
+                &:active {
+                    background-color: $secondary-blue;
+                    border-color: $secondary-blue;
+                }
             }
-
-            &:active {
+    
+            &:hover {
                 background-color: $secondary-blue;
                 border-color: $secondary-blue;
             }
-        }
-
-        &:hover {
-            background-color: $secondary-blue;
-            border-color: $secondary-blue;
-        }
-
-        &:active {
-            background-color: $light-blue;
-            border-color: $light-blue;
-        }
-    }
-    .cv-link {
-        float: right;
-        margin: .5rem 2.3rem;
-        padding: 8px 16px;
-        text-decoration: none;
-        color: $primary-blue;
-        border: 2px solid $primary-blue;
-        border-radius: 0.3em;
-
-        html[data-theme='dark'] & {
-            color: $primary-white;
-            border-color: $primary-white;
-
-            &:hover {
+    
+            &:active {
+                background-color: $light-blue;
                 border-color: $light-blue;
             }
+        }
 
-            &:active {
+        .cv-link {
+            float: right;
+            padding: 8px 16px;
+            text-decoration: none;
+            color: $primary-blue;
+            border: 2px solid $primary-blue;
+            border-radius: 0.3em;
+            line-height: 1.5rem;
+            box-sizing: border-box;
+    
+            html[data-theme='dark'] & {
+                color: $primary-white;
+                border-color: $primary-white;
+    
+                &:hover {
+                    border-color: $light-blue;
+                }
+    
+                &:active {
+                    border-color: $secondary-blue;
+                }
+            }
+    
+            &:hover {
                 border-color: $secondary-blue;
             }
-        }
-
-        &:hover {
-            border-color: $secondary-blue;
-        }
-
-        &:active {
-            border-color: $light-blue;
+    
+            &:active {
+                border-color: $light-blue;
+            }
         }
     }
+
 }
 
 footer {
@@ -605,10 +616,6 @@ footer {
 }
 
 @media screen and (max-width: 800px) {
-    .wrapper {
-        padding: 0 2rem;
-    }
-
     .header-nav ul {
         justify-content: space-between;
         margin: 0 1.5rem;
