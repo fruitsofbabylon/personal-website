@@ -484,7 +484,7 @@ footer {
   #experience {
     align-items: stretch; }
   #experience ul li {
-    margin-left: 2rem; }
+    margin-left: 1rem; }
     #experience ul li div {
       width: calc(100vw - 91px); }
   #experience ul li:nth-child(even) div {
@@ -504,3 +504,13 @@ footer {
     .header-nav.responsive ul li {
       display: block;
       padding: .5rem 0; } }
+
+@media screen and (max-width: 350px) {
+  section#home {
+    padding-top: 0; }
+  #home {
+    min-height: 90vh; }
+  h1 {
+    font-size: 4rem; }
+  #scroll {
+    bottom: 4em; } }
