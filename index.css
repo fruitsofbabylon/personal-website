@@ -361,11 +361,13 @@ section {
   position: relative;
   margin: 1.5rem 0; }
   .contact-form .form-group .form-control {
+    -webkit-appearance: none;
     display: block;
     width: 100%;
     height: 2rem;
     border-width: 0 0 2px 0;
     border-color: #3078B4;
+    border-radius: 0;
     font-family: inherit;
     line-height: 1.5rem;
     font-weight: 400;
@@ -381,6 +383,7 @@ section {
   justify-content: space-around;
   align-items: center; }
   .contact-form .flex-container-btn .btn {
+    -webkit-appearance: none;
     display: inline-block;
     background-color: #152038;
     color: #ffffff;
