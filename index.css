@@ -172,7 +172,7 @@ section {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  min-height: 92vh;
+  height: calc(100vh - 75px);
   text-align: center; }
 
 .icons-social {
@@ -477,6 +477,8 @@ footer {
     display: block; }
   #top {
     flex-direction: row-reverse; }
+  #home {
+    height: calc(100vh - 84px); }
   h1 {
     font-size: 5rem; }
   .subheading {
@@ -500,17 +502,17 @@ footer {
     text-align: right;
     margin: 2.5rem 0 0 0;
     position: absolute;
-    right: 0; }
+    right: 0;
+    background-color: #ffffff;
+    opacity: 0.9; }
     .header-nav.responsive ul li {
       display: block;
       padding: .5rem 0; } }
 
 @media screen and (max-width: 350px) {
-  section#home {
-    padding-top: 0; }
-  #home {
-    min-height: 90vh; }
   h1 {
     font-size: 4rem; }
+  .icons-social {
+    margin: 0; }
   #scroll {
-    bottom: 4em; } }
+    bottom: 5rem; } }
