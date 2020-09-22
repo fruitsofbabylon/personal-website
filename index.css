@@ -172,7 +172,7 @@ section {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: calc(100vh - 75px);
+  height: calc((var(--vh, 1vh) * 100) - 75px);
   text-align: center; }
 
 .icons-social {
@@ -478,7 +478,7 @@ footer {
   #top {
     flex-direction: row-reverse; }
   #home {
-    height: calc(100vh - 84px); }
+    height: calc((var(--vh, 1vh) * 100) - 84px); }
   h1 {
     font-size: 5rem; }
   .subheading {
