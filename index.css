@@ -183,8 +183,8 @@ section {
 
 #scroll {
   position: absolute;
-  bottom: 6em;
-  display: inline-block; }
+  bottom: 5rem;
+  display: block; }
   #scroll span {
     position: absolute;
     top: 0;
@@ -478,7 +478,7 @@ footer {
   #top {
     flex-direction: row-reverse; }
   #home {
-    height: calc((var(--vh, 1vh) * 100) - 84px); }
+    height: calc((var(--vh, 1vh) * 100) - 64px); }
   h1 {
     font-size: 5rem; }
   .subheading {
@@ -510,11 +510,9 @@ footer {
       padding: .5rem 0; } }
 
 @media screen and (max-width: 350px) {
-  section#home {
-    padding: 0; }
   h1 {
-    font-size: 4rem; }
-  .icons-social {
-    margin: 0; }
+    font-size: 4rem; } }
+
+@media screen and (max-height: 600px) {
   #scroll {
-    bottom: 5rem; } }
+    display: none; } }
