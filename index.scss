@@ -732,6 +732,10 @@ footer {
 }
 
 @media screen and (max-width: 350px) {
+    section#home {
+        padding: 0;
+    }
+
     h1 {
         font-size: 4rem;
     }
