@@ -724,6 +724,10 @@ footer {
         background-color: $primary-white;
         opacity: 0.9;
 
+        html[data-theme='dark'] & {
+            background-color: $primary-blue;
+        }
+
         li {
             display: block;
             padding: .5rem 0;
